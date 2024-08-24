@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pregunta Especial</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f0f8ff;
+            font-family: Arial, sans-serif;
+        }
+        .container {
+            text-align: center;
+            background: white;
+            border-radius: 8px;
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        h1 {
+            color: #ff6347;
+        }
+        .button {
+            display: inline-block;
+            padding: 10px 20px;
+            font-size: 18px;
+            color: white;
+            background-color: #ff6347;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            text-decoration: none;
+            margin: 10px;
+        }
+        .button:hover {
+            background-color: #ff4500;
+        }
+        .message {
+            display: none;
+            margin-top: 20px;
+            font-size: 24px;
+        }
+        .happy {
+            color: #28a745;
+        }
+        .sad {
+            color: #dc3545;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>¡Hola!</h1>
+        <p>Quería hacerte una pregunta muy importante...</p>
+        <h2>¿Quieres ser mi novia?</h2>
+        <button class="button" onclick="showMessage('yes')">Sí</button>
+        <button class="button" onclick="showMessage('no')">No</button>
+        <div id="message" class="message"></div>
+    </div>
+
+    <script>
+        function showMessage(answer) {
+            const messageElement = document.getElementById('message');
+            if (answer === 'yes') {
+                messageElement.textContent = '¡Te extrañé mucho! ¡Te amooooooo!';
+                messageElement.className = 'message happy';
+            } else if (answer === 'no') {
+                messageElement.textContent = ':(';
+                messageElement.className = 'message sad';
+            }
+            messageElement.style.display = 'block';
+        }
+    </script>
+</body>
+</html>
